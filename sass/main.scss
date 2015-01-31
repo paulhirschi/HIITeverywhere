@@ -1,0 +1,178 @@
+@import 'jeet';
+
+/*======================================
+Variables & Mixins
+======================================*/
+$primaryTitle: 'Racing Sans One', Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+
+$secondaryTitle: 'Armata', "Arial Narrow", Arial, sans-serif;
+$textColor: #424242;
+$backgroundColor: #f2f2f2;
+$highlight1: #039B1C; //Greenish
+$highlight2: #FB5D28; //Orangey
+
+/*======================================
+Font Face Declarations
+======================================*/
+
+@font-face {
+  font-family: 'Armata';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Armata'), local('Armata-Regular'), url(http://fonts.gstatic.com/s/armata/v6/wCpxdWSe73duzVFV59TJw-vvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}
+@font-face {
+  font-family: 'Racing Sans One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Racing Sans One'), local('RacingSansOne-Regular'), url(http://fonts.gstatic.com/s/racingsansone/v4/1r3DpWaCiT7y3PD4KgkNyAaS65eljNVkG0R6HbhLwtY.woff) format('woff');
+}
+/*======================================
+Page Transition Keyframes
+======================================*/
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+  
+  /** An element that fades in and slides from the right */
+.sceneElement--fadeinright {
+  animation-name: fadeInRight;
+  animation-duration: 0.5s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+
+/*======================================
+Global Styles
+======================================*/
+.highlight1 {
+  color: $highlight1;
+}
+.highlight2 {
+  color: $highlight2;
+}
+html {
+  background-color: $backgroundColor;
+}
+body {
+  color: $textColor;
+}
+.container {
+  @include center(400px);
+}
+a:hover,
+a:active {
+  cursor: pointer;
+}
+a:active {
+  background-color: $highlight1;
+  color: $backgroundColor;
+}
+header {
+  text-align: center;
+  margin-top: -3em;
+  margin-bottom: 2em;
+  h1 {
+    font-family: $primaryTitle;
+    font-size: 4em;
+
+  }
+  h3 {
+    margin-top: -3em;
+    font-family: $secondaryTitle;
+  }
+}
+
+/*======================================
+Selection Pages Styles
+======================================*/
+.selectionWrap {
+  text-align: center;
+  margin: 1.5em 0;
+}
+.selection {
+  text-decoration: none;
+  font-family: $primaryTitle;
+  font-size: 1.75em;
+  letter-spacing: 0.25em;
+  padding: 0.4em;
+  color: inherit;
+  display: inline-block;
+  width: 80%;
+  border: 2px solid $highlight1;
+  box-shadow: 3px 3px 2px darken($highlight1, 10%);
+}
+footer {
+  text-align: center;
+  font-family: $secondaryTitle;
+  font-size: 0.75em;
+  p {
+    display: inline-block;
+    margin: 1.5em 0;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-family: $primaryTitle;
+    font-size: 1.25em;
+    padding: 1em;
+  }
+}
+.webpageLink {
+  font-family: $secondaryTitle;
+}
+
+/*======================================
+Workout Page Styles
+======================================*/
+.workoutWrap {
+  text-align: center;
+  h1 {
+    font-family: $primaryTitle;
+    font-size: 2em;
+    margin: 1.25em 0;
+  }
+  .rest h3 {
+    font-family: $secondaryTitle;
+    font-size: 0.85em;
+    padding-top: 1em;
+    width: 300px;
+    margin: 0 auto;
+  }
+  .workClock,
+  .restClock {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .startTime {
+    background-color: $backgroundColor;
+  }
+}
+
+/*======================================
+About Page Styles
+======================================*/
+.aboutWrap {
+  font-family: $secondaryTitle;
+  padding: 0 1.5em;
+}
+
+
+
+
+
+
+
+

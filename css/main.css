@@ -1,0 +1,297 @@
+/*  Syntax Quick Reference
+  --------------------------
+  column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
+  span($ratio: 1, $offset: 0)
+  shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
+  unshift()
+  edit()
+  center($max_width: 1410px, $pad: 0)
+  stack($pad: 0, $align: false)
+  unstack()
+  align($direction: both)
+  cf()
+*/
+/**
+ * Grid settings.
+ * All values are defaults and can therefore be easily overidden.
+ */
+/**
+ * List functions courtesy of the wonderful folks at Team Sass.
+ * Check out their awesome grid: Singularity.
+ */
+/**
+ * Get  percentage from a given ratio.
+ * @param {number} [$ratio=1] - The column ratio of the element.
+ * @returns {number} - The percentage value.
+ */
+/**
+ * Work out the column widths based on the ratio and gutter sizes.
+ * @param {number} [$ratios=1] - The column ratio of the element.
+ * @param {number} [$gutter=$jeet-gutter] - The gutter for the column.
+ * @returns {list} $width $gutter - A list containing the with and gutter for the element.
+ */
+/**
+ * Get the set layout direction for the project.
+ * @returns {string} $direction - The layout direction.
+ */
+/**
+ * Replace a specified list value with a new value (uses built in set-nth() if available)
+ * @param {list} $list - The list of values you want to alter.
+ * @param {number} $index - The index of the list item you want to replace.
+ * @param {*} $value - The value you want to replace $index with.
+ * @returns {list} $list - The list with the value replaced or removed.
+ * @warn if an invalid index is supplied.
+ */
+/**
+ * Reverse a list (progressively enhanced for Sass 3.3)
+ * @param {list} $list - The list of values you want to reverse.
+ * @returns {list} $result - The reversed list.
+ */
+/**
+ * Get the opposite direction to a given value.
+ * @param {string} $dir - The direction you want the opposite of.
+ * @returns {string} - The opposite direction to $dir.
+ * @warn if an incorrect string is provided.
+ */
+/**
+ * Style an element as a column with a gutter.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [$cycle=0] - Easily create an nth column grid where $cycle equals the number of columns.
+ * @param {number} [$uncycle=0] - Undo a previous cycle value to allow for a new one.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column mixin.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Get the width of a column and nothing else.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Get the gutter size of a column and nothing else.
+ * @param {number} [ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [gutter=jeet.gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column-width function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * An alias for the column-gutter function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Style an element as a column without any gutters for a seamless row.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns.
+ * @param {number} [uncycle=0] - Undo a previous cycle value to allow for a new one.
+ */
+/**
+ * Reorder columns without altering the HTML.
+ * @param {number} [$ratios=0] - Specify how far along you want the element to move.
+ * @param {string} [$col-or-span=column] - Specify whether the element has a gutter or not.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Reset an element that has had shift() applied to it.
+ */
+/**
+ * View the grid and its layers for easy debugging.
+ * @param {string} [$color=black] - The background tint applied.
+ * @param {boolean} [$important=false] - Whether to apply the style as !important.
+ */
+/**
+ *  Alias for edit().
+ */
+/**
+ * Horizontally center an element.
+ * @param {number} [$max-width=1410px] - The max width the element can be.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ */
+/**
+ * Uncenter an element.
+ */
+/**
+ * Stack an element so that nothing is either side of it.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ * @param {boolean/string} [$align=false] - Specify the text align for the element.
+ */
+/**
+ * Unstack an element.
+ */
+/**
+ * Center an element on either or both axes.
+ * @requires A parent container with relative positioning.
+ * @param {string} [$direction=both] - Specify which axes to center the element on.
+ */
+/**
+ * Apply a clearfix to an element.
+ */
+/*======================================
+Variables & Mixins
+======================================*/
+/*======================================
+Font Face Declarations
+======================================*/
+@font-face {
+  font-family: 'Armata';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Armata"), local("Armata-Regular"), url(http://fonts.gstatic.com/s/armata/v6/wCpxdWSe73duzVFV59TJw-vvDin1pK8aKteLpeZ5c0A.woff) format("woff"); }
+@font-face {
+  font-family: 'Racing Sans One';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Racing Sans One"), local("RacingSansOne-Regular"), url(http://fonts.gstatic.com/s/racingsansone/v4/1r3DpWaCiT7y3PD4KgkNyAaS65eljNVkG0R6HbhLwtY.woff) format("woff"); }
+/*======================================
+Page Transition Keyframes
+======================================*/
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+/** An element that fades in and slides from the right */
+.sceneElement--fadeinright {
+  -webkit-animation-name: fadeInRight;
+          animation-name: fadeInRight;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
+/*======================================
+Global Styles
+======================================*/
+.highlight1 {
+  color: #039B1C; }
+
+.highlight2 {
+  color: #FB5D28; }
+
+html {
+  background-color: #f2f2f2; }
+
+body {
+  color: #424242; }
+
+.container {
+  *zoom: 1;
+  width: auto;
+  max-width: 400px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0; }
+  .container:before, .container:after {
+    content: '';
+    display: table; }
+  .container:after {
+    clear: both; }
+
+a:hover,
+a:active {
+  cursor: pointer; }
+
+a:active {
+  background-color: #039B1C;
+  color: #f2f2f2; }
+
+header {
+  text-align: center;
+  margin-top: -3em;
+  margin-bottom: 2em; }
+  header h1 {
+    font-family: "Racing Sans One", Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+    font-size: 4em; }
+  header h3 {
+    margin-top: -3em;
+    font-family: "Armata", "Arial Narrow", Arial, sans-serif; }
+
+/*======================================
+Selection Pages Styles
+======================================*/
+.selectionWrap {
+  text-align: center;
+  margin: 1.5em 0; }
+
+.selection {
+  text-decoration: none;
+  font-family: "Racing Sans One", Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-size: 1.75em;
+  letter-spacing: 0.25em;
+  padding: 0.4em;
+  color: inherit;
+  display: inline-block;
+  width: 80%;
+  border: 2px solid #039B1C;
+  box-shadow: 3px 3px 2px #026913; }
+
+footer {
+  text-align: center;
+  font-family: "Armata", "Arial Narrow", Arial, sans-serif;
+  font-size: 0.75em; }
+  footer p {
+    display: inline-block;
+    margin: 1.5em 0; }
+  footer a {
+    text-decoration: none;
+    color: inherit;
+    font-family: "Racing Sans One", Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+    font-size: 1.25em;
+    padding: 1em; }
+
+.webpageLink {
+  font-family: "Armata", "Arial Narrow", Arial, sans-serif; }
+
+/*======================================
+Workout Page Styles
+======================================*/
+.workoutWrap {
+  text-align: center; }
+  .workoutWrap h1 {
+    font-family: "Racing Sans One", Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+    font-size: 2em;
+    margin: 1.25em 0; }
+  .workoutWrap .rest h3 {
+    font-family: "Armata", "Arial Narrow", Arial, sans-serif;
+    font-size: 0.85em;
+    padding-top: 1em;
+    width: 300px;
+    margin: 0 auto; }
+  .workoutWrap .workClock,
+  .workoutWrap .restClock {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center; }
+  .workoutWrap .startTime {
+    background-color: #f2f2f2; }
+
+/*======================================
+About Page Styles
+======================================*/
+.aboutWrap {
+  font-family: "Armata", "Arial Narrow", Arial, sans-serif;
+  padding: 0 1.5em; }
